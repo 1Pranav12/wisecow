@@ -1,72 +1,74 @@
-# Cow wisdom web server
+Wisecow DevOps Project
+Project Overview
 
-## Prerequisites
+This project is built to demonstrate basic DevOps practices using containerization, Kubernetes, and CI/CD automation.
+It includes a simple application deployed using Docker and Kubernetes along with automated pipeline using GitHub Actions.
+Along with that, basic system monitoring and application health checking scripts are also added using Python.
 
-```
-sudo apt install fortune-mod cowsay -y
-```
+Tech Stack
+Docker
+Kubernetes (Kind)
+GitHub Actions
+Python
+Linux (Bash basics)
+Project Structure
+wisecow/
+│
+├── .github/workflows/        # CI/CD pipeline
+├── k8s/                      # Kubernetes YAML files
+├── Dockerfile               # Docker configuration
+├── index.html               # Sample application page
+├── system_health.py        # System monitoring script
+├── app_health.py           # Application health checker
+├── requirements.txt       # Python dependencies
+└── README.md
+Features
+Docker
+Application is containerized using Docker
+Easy to build and run in any environment
+Kubernetes
+Deployment done using Kind cluster
+Service exposed using NodePort
+Handles scaling and container management
+CI/CD Pipeline
+GitHub Actions used for automation
+Builds Docker image on every push
+Pushes image to DockerHub automatically
+Monitoring Scripts
+Checks CPU, memory, and disk usage
+Monitors application status using HTTP response codes
+How to Run
+1. Clone Repository
+git clone https://github.com/1Pranav12/wisecow.git
+cd wisecow
+2. Build and Run Docker
+docker build -t wisecow .
+docker run -p 4499:4499 wisecow
+3. Run Kubernetes
+kubectl apply -f k8s/
+4. Run Python Scripts
+pip install -r requirements.txt
 
-## How to use?
+python system_health.py
+python app_health.py
+CI/CD Flow
 
-1. Run `./wisecow.sh`
-2. Point the browser to server port (default 4499)
+Whenever code is pushed to GitHub:
 
-## What to expect?
-![wisecow](https://github.com/nyrahul/wisecow/assets/9133227/8d6bfde3-4a5a-480e-8d55-3fef60300d98)
+GitHub → GitHub Actions → Docker Build → DockerHub → Ready for Deployment
 
-# Problem Statement
-Deploy the wisecow application as a k8s app
+Requirements
+psutil
+requests
 
-## Requirement
-1. Create Dockerfile for the image and corresponding k8s manifest to deploy in k8s env. The wisecow service should be exposed as k8s service.
-2. Github action for creating new image when changes are made to this repo
-3. [Challenge goal]: Enable secure TLS communication for the wisecow app.
+Install using:
 
-## Expected Artifacts
-1. Github repo containing the app with corresponding dockerfile, k8s manifest, any other artifacts needed.
-2. Github repo with corresponding github action.
-3. Github repo should be kept private and the access should be enabled for following github IDs: nyrahul
-CI/CD Test
-# Wisecow Kubernetes Deployment Project
+pip install -r requirements.txt
+Status
+Docker image builds successfully
+Kubernetes deployment working
+CI/CD pipeline running (GitHub Actions green tick)
+Monitoring scripts working
+Author
 
-## Features
-- Dockerized application
-- Kubernetes deployment using Kind
-- GitHub Actions CI/CD pipeline
-- DockerHub integration
-- Kubernetes service exposure
-
-## Technologies Used
-- Docker
-- Kubernetes
-- GitHub Actions
-- Kind Cluster
-- DockerHub
-
-## Deployment Steps
-1. Build Docker image
-2. Deploy to Kubernetes
-3. Expose service
-4. Configure CI/CD pipeline
-# Wisecow CI/CD Kubernetes Project
-
-## 🚀 Project Overview
-This project demonstrates containerization, Kubernetes deployment, and CI/CD automation using GitHub Actions.
-
-## ⚙️ Tech Stack
-- Docker
-- Kubernetes (Kind)
-- GitHub Actions
-- DockerHub
-
-## 📦 Features
-- Dockerized application
-- Kubernetes Deployment & Service
-- CI/CD pipeline using GitHub Actions
-- Auto DockerHub image push
-
-## 🔄 CI/CD Flow
-GitHub Push → GitHub Actions → Docker Build → DockerHub Push
-
-## 📸 Status
-All pipelines are successfully running (Green ✓)final test
+Pranav Garg
