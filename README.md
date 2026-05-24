@@ -27,3 +27,46 @@ Deploy the wisecow application as a k8s app
 2. Github repo with corresponding github action.
 3. Github repo should be kept private and the access should be enabled for following github IDs: nyrahul
 CI/CD Test
+# Wisecow Kubernetes Deployment Project
+
+## Features
+- Dockerized application
+- Kubernetes deployment using Kind
+- GitHub Actions CI/CD pipeline
+- DockerHub integration
+- Kubernetes service exposure
+
+## Technologies Used
+- Docker
+- Kubernetes
+- GitHub Actions
+- Kind Cluster
+- DockerHub
+
+## Deployment Steps
+1. Build Docker image
+2. Deploy to Kubernetes
+3. Expose service
+4. Configure CI/CD pipeline
+# Wisecow CI/CD Kubernetes Project
+
+## 🚀 Project Overview
+This project demonstrates containerization, Kubernetes deployment, and CI/CD automation using GitHub Actions.
+
+## ⚙️ Tech Stack
+- Docker
+- Kubernetes (Kind)
+- GitHub Actions
+- DockerHub
+
+## 📦 Features
+- Dockerized application
+- Kubernetes Deployment & Service
+- CI/CD pipeline using GitHub Actions
+- Auto DockerHub image push
+
+## 🔄 CI/CD Flow
+GitHub Push → GitHub Actions → Docker Build → DockerHub Push
+
+## 📸 Status
+All pipelines are successfully running (Green ✓)
